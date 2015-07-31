@@ -18,16 +18,8 @@ August 2015 Mission
 
 ## ToDo
 
-[ ] TypeScriptちょっと書いてみる。
-[ ] AngularJSとTypeScriptの組合せでサンプルとか動かしてみる
-[ ] quizのviewをまずは作る
+-[] TypeScriptちょっと書いてみる。
+-[] AngularJSとTypeScriptの組合せでサンプルとか動かしてみる
+-[] quizのviewをまずは作る
 
 以降追記していく。
-
-## History
-
-### Aug 1
-
-* どこかのかぼちゃお姉さまにやるって宣言しちゃった(0:06)。
-* まずはやること決めた(1:00頃)。
-* README.md書き始めた。と思ったけど、これHISTORY.mdにしたほうがいいんちゃうの?っていうことで分離(1:33)
