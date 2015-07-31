@@ -18,8 +18,8 @@ August 2015 Mission
 
 ## ToDo
 
--[] TypeScriptちょっと書いてみる。
--[] AngularJSとTypeScriptの組合せでサンプルとか動かしてみる
--[] quizのviewをまずは作る
+* TypeScriptちょっと書いてみる。
+* AngularJSとTypeScriptの組合せでサンプルとか動かしてみる
+* quizのviewをまずは作る
 
 以降追記していく。
