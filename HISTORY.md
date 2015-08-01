@@ -18,3 +18,4 @@
   * constructorって書くのダルい…どこかの言語みたいにクラス名と同じfunction作ったらコンストラクターになる。ってのもキモいけどさ…
     * ってfunction constructorじゃないんだ。constructorってだけ書くんだ。。。
   * (tutorial)[tutorial]からどうぞ。
+  * 明日からは日ごとにブランチ切ってちゃんとやろう。。。最後にまとめてマージする形で。
