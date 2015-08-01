@@ -19,3 +19,9 @@
     * ってfunction constructorじゃないんだ。constructorってだけ書くんだ。。。
   * [tutorial](tutorial)からどうぞ。
   * 明日からは日ごとにブランチ切ってちゃんとやろう。。。最後にまとめてマージする形で。
+
+## Aug 2
+
+* npmが壊れたのでnode.jsごと再インストール…orz(2:30)
+* `npm install -g grunt-cli bower yo generator-karma generator-angular`
+* おきたら[これ](https://github.com/vvakame/angularjs-typescript)見る。もう3時だし寝る。
