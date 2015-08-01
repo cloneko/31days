@@ -1,17 +1,17 @@
 class Student {
     fullname : string;
-    constructor(public firstname: string, public middleinitial: string, public lastname: string) {
-        this.fullname = firstname + " " + middleinitial + " " + lastname;
+    constructor(public firstName: string, public middleInitial: string, public lastName: string) {
+        this.fullname = firstName + " " + middleInitial + " " + lastName;
     }
 }
 
 interface Person {
-    firstname: string;
-    lastname: string;
+    firstName: string;
+    lastName: string;
 }
 
-function greeter(person: Person) {
-    return "Hello," + person.firstname + " " + person.lastname;
+function greeter(parameter: Person) {
+    return "Hello," + parameter.firstName + " " + parameter.lastName;
 }
 
 var user = new Student("Jane", "M.", "User"); 
