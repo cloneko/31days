@@ -17,11 +17,26 @@
     * 型宣言した状態のコードをpushする。
   * constructorって書くのダルい…どこかの言語みたいにクラス名と同じfunction作ったらコンストラクターになる。ってのもキモいけどさ…
     * ってfunction constructorじゃないんだ。constructorってだけ書くんだ。。。
-  * [tutorial](tutorial)からどうぞ。
+  * [typescript-tutorial](typescript-tutorial)からどうぞ。
   * 明日からは日ごとにブランチ切ってちゃんとやろう。。。最後にまとめてマージする形で。
 
 ## Aug 2
 
+* そういやWebStrom様があれこれ怒ってくれたので修正。firstnameはfirstNameだろ!とか、functionの引数はparamaterって名前にしろ。とか。
 * npmが壊れたのでnode.jsごと再インストール…orz(2:30)
 * `npm install -g grunt-cli bower yo generator-karma generator-angular`
 * おきたら[これ](https://github.com/vvakame/angularjs-typescript)見る。もう3時だし寝る。
+* ってyo使うと大変なことになりそうなのでyoは無しかな…(22:08)
+* `http-server@0.8.0 should be installed with -g`って…w わからんでもないけどさw
+  * `npm -g install http-server`した。
+* Atomの右下にツッコみを入れてまくってる。2 deprecationsってあったんだけど、2つともemmetという。なんじゃそりゃ。
+* まずAngularJSを思い出そうと思いました。まる。
+* [AngularJSのチュートリアル(3回目な気がする…)](https://docs.angularjs.org/tutorial/)をやる。
+  * Tutorial1はスルー(Static HTMLの話だし{{2 + 1}}とか書けるって話なので)。2を見てる。
+  * `<html ng-app="なんとか">`のなんとかのとこにはapp/js/controllers.jsの中で`var hogehoge = angular.module('なんとか',[]);`って書いたら動くってことかな。
+    * ついでに`hogehoge.controller('コントローラー名', function($scope){ コントローラーの処理 });`みたいな感じで書いて
+  html中に`<body ng-controller="コントローラー名">`に書けば中の処理が動く感じ?
+    * ng-repeatはそのまんまなのでいいや。`<li ng-repeat="hogehoge in hogehoges">`の下に`{{hogehoge.property}}`的なのでアクセスできるってことだと思う。
+    * こんなキーの入った連想配列に強制する!みたいなのないんかな?  
+    `var phones: {name?: string, snippet?: string;}[] = `みたいにしたらnameとsnippet以外が入ってたアウト的な。interfaceでやれ。って話なんだろうけど。
+    * あーでも`var phones: {name?: string, snippet?: number;}[] = `にしてsnippetに文字列入れたら怒られたからそういうところで縛れるのはいいな。
