@@ -40,3 +40,136 @@
     * こんなキーの入った連想配列に強制する!みたいなのないんかな?  
     `var phones: {name?: string, snippet?: string;}[] = `みたいにしたらnameとsnippet以外が入ってたアウト的な。interfaceでやれ。って話なんだろうけど。
     * あーでも`var phones: {name?: string, snippet?: number;}[] = `にしてsnippetに文字列入れたら怒られたからそういうところで縛れるのはいいな。
+
+## Aug 3
+
+なんかコード書いてる感がしない…(実際書いてない)
+
+### Tutorial2の奴まだやってる。
+`var phones: {name?: string, snippet?: string;}[] = `の「?」は省略可能っていう意味なのね。?抜けばやりたいことはできる。ってことか。
+
+* できた。
+* 結局interfaceでできたし、interfaceでやったほうが、はやかったっていうオチ。そりゃそうだ。
+
+### Tutorial3はじめた。(1:00頃)
+
+`<body ng-controller="ほげほげ">`ってやってると`<head></head>`の中には影響しないからタイトルとかイジりたければhtmlにng-controller書いてあげる必要がある。ってことだよね。
+
+* 当然のことながらhtmlに書いたらbodyの奴消さないとね。
+* 不用意にbody以外のところ触られたくなかったらbodyに書けってことかな?もしかしてdivの中とかでもできる?
+  * できた。そりゃそうか。
+* filterは`ng-repleat hoge in hoges |filter:ng-modelで指定されたモデル名`って書けば動くのか。簡単すぎわろた。
+    * 当然のことながら`<input ng-model="ほげほげ">`って書いとかないと駄目なんだけど。
+    * `<input type="radio" ng-model="ほげほげ" value="ほげほげ">`でもできるかな?
+      * あたりまえのようにできた。
+  * Tutorial3でテストコード書いてるけどこれTypeScriptで書いても大丈夫かな?
+    * って別にTSで書く内容じゃないな…
+  * なんかWebStrom様が謎の挙動をするんだけどこれどういうことだろ…
+    * {{query}}って書いたら勝手に{{que}}に置換するんだけど…
+    * 再起動したらしなくなった。なんだこれ。
+  * このフィルターの機能、問題セット検索に使えるな。
+
+###  Tutorial4
+
+`orderBy:ng-model`もしくは`orderBy:コントローラーの中のプロパティ`って書くと並べ替えしてくれるかな。
+
+* 多分ここで言いたいのはcontrollerの中で指定していてもいいし、ng-modelで指定してもいい。ってことなんだろう…ということにしておく。
+  * それが2way data bindingってことかな?
+  * orderBy:で指定するプロパティ or ng-modelの前に"-"をつけるとソートが逆転する。って。
+  * え?そんだけ?
+
+### Tutorial5
+$scopeとか$httpって$から始まる奴ってAngularJSの何かなんだ…
+
+* 最近PHPばっかり書いてたから気にしてなかった。
+* jQueryかな?
+
+#### DI
+
+Injection汁
+
+```javascript
+module.controller('コントローラー名', [依存したいの1, 依存したいの2, ... , 依存したいのn,function(依存したいの1, 依存したいの2, ... , 依存したいのn) {
+  // 処理
+}]);
+```
+
+ 出たよコールバック関数
+
+```javascript
+$http.get(url).success(fucntion(data){
+  // dataもにょもにょ
+});
+```
+
+* この辺から`npm start`必須っぽいすな…(httpリクエスト使うために)
+* `| json`で生のjson見れるのね。
+* 今回の作ろうとしている奴はjsonでデータ持ってるからDIで$http注入するの確定なわけね。
+* DIってよくわかってなかったけど、ちょっとはわかった。
+
+### Tutorial6(こっから22:50)
+
+imgのsrcの代わりにng-src使えって話ね。あと、↓のルーティング用のリンク貼る時は
+```html
+<a href="#/なんとか/かんとか">ほげほげ</a>
+```
+にするのね。
+
+### Tutorial7
+
+ルーティング。と、コントローラー2つ同時使用。
+
+oh...
+```html
+<body>
+  <div ng-view></div>
+</body>
+```
+まぁ、そりゃそうだよね…
+
+ルーティングの必要のあるコントローラーには **$routeParams** をDIしなきゃ駄目。
+
+```javascript
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    $scope.phoneId = $routeParams.phoneId;
+  }]);
+```
+
+`$routeParams`のphoneIdって何ぞ?っ灯ったけど、↓の/phones/:phoneIdのソレか。
+
+
+app.jsもイジる必要あり。第二引数でngRouteとコントローラーをの入った配列を指定している。
+
+```javascript
+var phonecatApp = angular.module('phonecatApp', [
+  'ngRoute',
+  'phonecatControllers'
+]);
+```
+
+ほんでもってルーティングの設定もapp.jsに書かなきゃ?ルーティングの設定には
+templateUrlとcontrollerを書く。
+
+```javascript
+phonecatApp.config(['$routeProvider',
+  function($routeProvider) {
+        $routeProvider.
+      when('/phones', {
+        templateUrl: 'partials/phone-list.html',
+        controller: 'PhoneListCtrl'
+      }).
+      when('/phones/:phoneId', {
+        templateUrl: 'partials/phone-detail.html',
+        controller: 'PhoneDetailCtrl'
+      }).
+      otherwise({
+        redirectTo: '/phones'
+      });
+}]);
+```
+
+というわけでまずはapp.jsにルーティングの設定ちゃんと書いてからcontrollers.jsをイジらないと
+いけないわけですね。で、`<div ng-view>`が書き換えられるわけか…
+
+今日は眠いのでこれまで。
