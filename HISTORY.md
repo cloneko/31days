@@ -183,3 +183,43 @@ phonecatApp.config(['$routeProvider',
 お。おう。(ng-repeatのことか…)
 
 おうちかえってテンション高かったらTutorial9見る。
+
+### Tutorial 9(23:20)
+
+フィルター自作できるんだね…必要になったら参照できるようにしておく(多分すぐには使わないと思う)
+
+#### フィルター自作(Tutorialコピペ)
+
+まずは[ビルドインのフィルター](https://docs.angularjs.org/api/ng/filter)チェックしてから。
+
+app/js/filters.js
+
+```javascript
+angular.module('phonecatFilters', []).filter('checkmark', function() {
+  return function(input) {
+    return input ? '\u2713' : '\u2718';
+  };
+});
+```
+
+app/js/app.js
+
+```javascript
+angular.module('phonecatApp', ['ngRoute','phonecatControllers','phonecatFilters']);
+```
+
+テンプレートで
+
+```
+{{ expression | checkmark }}
+```
+
+当然のことながらhtmlで
+
+```html
+<script src="js/filters.js"></script>
+```
+
+しとかないと使えない。
+
+たしかこの次くらいにめんどくさいのがくるはず…今日はテンション上がらないのでこれでやめとく…
