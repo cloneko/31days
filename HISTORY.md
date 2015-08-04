@@ -223,3 +223,112 @@ angular.module('phonecatApp', ['ngRoute','phonecatControllers','phonecatFilters'
 しとかないと使えない。
 
 たしかこの次くらいにめんどくさいのがくるはず…今日はテンション上がらないのでこれでやめとく…
+
+
+## Aug 5
+
+↑テンション上がらない。あれは時間帯の問題だ(1:00)
+
+### EventHandler/Tutorial 10
+
+コントローラー中に `$scope.メソッド` を作っておいて、
+テンプレートで `ng-click="メソッド名(arg)"` を指定するわけね。
+
+例のごとくコピペ
+
+app/js/controllers.js
+
+```javascript
+var phonecatControllers = angular.module('phonecatControllers',[]);
+
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    $http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {
+      $scope.phone = data;
+      $scope.mainImageUrl = data.images[0];
+    });
+
+    $scope.setImage = function(imageUrl) {
+      $scope.mainImageUrl = imageUrl;
+    };
+  }]);
+```
+
+テンプレート
+
+```html
+<img ng-src="{{mainImageUrl}}" class="phone">
+
+ry
+
+<ul class="phone-thumbs">
+  <li ng-repeat="img in phone.images">
+    <img ng-src="{{img}}" ng-click="setImage(img)">
+  </li>
+</ul>
+```
+
+うん。難しくない。
+
+### Tutorial 11 サービス?
+
+使う時はbowerでangular-resource使えるようにしとかんといけないらしい(services.jsでDIしてるし)。
+
+サービスがよくわからん…
+これはRESTfulなサービスから情報取ってくる時にはservices.jsに書いとけば楽チンよ?ってこと?
+
+コピペ(app/js/services.js)
+
+```javascript
+var phonecatServices = angular.module('phonecatServices', ['ngResource']);
+
+phonecatServices.factory('Phone', ['$resource',
+  function($resource){
+    return $resource('phones/:phoneId.json', {}, {
+      query: {method:'GET', params:{phoneId:'phones'}, isArray:true}
+    });
+  }]);
+```
+
+あとはcontrollers.jsから呼び出す時にはservices.jsに登録したサービス名でDIしたら
+サービス名.get(param)で呼びだせるぜやったー。ってことなのかな?
+
+あ、その前にapp.jsにもDIしとかないと。
+
+app/js/app.js
+
+```javascript
+angular.module('phonecatApp', ['ngRoute', 'phonecatControllers','phonecatFilters', 'phonecatServices']).
+```
+
+app/js/controllers.js
+
+```javascript
+var phonecatControllers = angular.module('phonecatControllers', []);
+
+...
+
+phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($scope, Phone) {
+  $scope.phones = Phone.query();
+  $scope.orderProp = 'age';
+}]);
+
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone', function($scope, $routeParams, Phone) {
+  $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
+    $scope.mainImageUrl = phone.images[0];
+  });
+
+  $scope.setImage = function(imageUrl) {
+    $scope.mainImageUrl = imageUrl;
+  }
+}]);
+```
+
+はて、Phone.query()とPhone.get(param)はいいんだけど、Phone.get() is どこ?
+
+あー何も値していしない(デフォルト値:phones)だったらphones/phones.json取ってくるようになってるわけね…
+(ていうかgetって$http.getってことなのね…)
+
+ややこしや。
+
+1:30超えそうなので深夜の部はこの辺で止めとこ。
