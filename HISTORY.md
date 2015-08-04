@@ -177,3 +177,9 @@ phonecatApp.config(['$routeProvider',
 ## Aug 4
 
 眠いのでこれまでとか↑に書いてあるけど、まだ寝てない(1:40)
+
+### Tutorial 8(20:00)
+
+お。おう。(ng-repeatのことか…)
+
+おうちかえってテンション高かったらTutorial9見る。
