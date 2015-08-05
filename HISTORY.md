@@ -332,3 +332,28 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
 ややこしや。
 
 1:30超えそうなので深夜の部はこの辺で止めとこ。
+
+### Tutorial 12 / Animation
+
+bower.jsonでangular-animateとjquery入れとかなあかん。
+
+```html
+<!-- for CSS Transitions and/or Keyframe Animations -->
+<link rel="stylesheet" href="css/animations.css">
+<!-- jQuery is used for JavaScript animations (include this before angular.js) -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<!-- required module to enable animation support in AngularJS -->
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<!-- for JavaScript Animations -->
+<script src="js/animations.js"></script>
+```
+
+は入れといてね。
+
+animations.jsでアニメーションを実装する…らしい。
+
+今のところスルーしておこう。。。
+
+無くても作りたいものは作れる…必要になったら戻ろう…
+
+ここからはアレを作るミッションに入る。
