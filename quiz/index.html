@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Quiz?</title>
+	<base href="/">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+
+	<!-- bower:css -->
+	<!-- endbower -->
+	<link href="/stylesheets/main.css" type="text/css">
+
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/es5-shim/es5-shim.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<!-- endbower -->
+	<script type="text/javascript" src="/scripts/index.js" charset="utf-8"></script>
+</head>
+<body>
+
+<div ng-view>
+</div>
+
+<script type="text/ng-template" id="/template/sample.html">
+	<div ng-controller="TestController">
+		<input type="text" ng-model="name">
+		{{name}}
+	</div>
+</script>
+
+<script type="text/ng-template" id="/template/main.html">
+	<p>
+		メインです。<br>
+		<a ng-href="/sample">サンプル</a>
+	</p>
+</script>
+
+</body>
+</html>

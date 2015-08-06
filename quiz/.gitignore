@@ -1,0 +1,26 @@
+.DS_Store
+.idea/
+
+# for client side development
+.sass-cache/
+.tscache/
+node_modules/
+bower_components/
+typings/
+tscommand.tmp.txt
+tsconfig.json
+
+docs/
+
+scripts/**/*.js
+scripts/**/*.js.map
+
+stylesheets/
+
+test/**/*.js
+test/**/*.js.map
+
+testEspowered/**/*.js
+testEspowered/**/*.js.map
+
+test-results.xml
