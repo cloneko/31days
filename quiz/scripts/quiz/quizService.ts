@@ -1,7 +1,7 @@
 namespace app.quiz {
 	"use strict";
 
-	export class quizService {
+	export class QuizService {
 
 		constructor(public $http: ng.IHttpService) {
 		}
@@ -11,5 +11,5 @@ namespace app.quiz {
 		}
 	}
 
-	angular.module("app.quiz").service("quizService", SampleService);
+	angular.module("app.quiz").service("QuizService", QuizService);
 }

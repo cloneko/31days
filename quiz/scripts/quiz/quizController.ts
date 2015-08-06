@@ -4,13 +4,13 @@
 namespace app.quiz {
 	"use strict";
 
-	export interface quizScope extends ng.IScope {
+	export interface QuizScope extends ng.IScope {
 		questionSet: any[];
 	}
 
 	export class QuizController {
 
-		constructor(public $scope: quizScope, public quizService: QuizService) {
+		constructor(public $scope: QuizScope, public quizService: QuizService) {
 
 		}
 

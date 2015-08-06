@@ -72,3 +72,6 @@
 * と思ったけど、まずは環境構築…
 * [https://github.com/vvakame/angularjs-typescript](https://github.com/vvakame/angularjs-typescript)のお世話になります。
   * setup.sh動かすとファンがまわりはじめる…
+* とりあえずコントローラーとサービスを作る。っていってもサンプルの名前変えただけ。
+  tslintにいろいろ怒られながらとりあえず怒られないように持っていった。
+* あとはADD(アルコール駆動開発)でがんばります(既にお酒入ってます)
