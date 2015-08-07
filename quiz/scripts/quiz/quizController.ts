@@ -8,8 +8,9 @@ namespace app.quiz {
 		questionSet: any[];
 	}
 
-	export class QuizController {
 
+
+	export class QuizController {
 		constructor(public $scope: QuizScope, public quizService: QuizService) {
 
 		}
@@ -19,5 +20,7 @@ namespace app.quiz {
 		}
 	}
 
-	angular.module("app.hello").controller("QuizController", QuizController);
+	angular.module("app.quiz").controller("QuizController", QuizController);
+	angular.module("app.quiz").controller("QuestionSet",["ngResource"]);
+
 }
