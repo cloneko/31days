@@ -7,7 +7,7 @@ namespace app {
 
 	angular.module(
 		"app",
-		["ngRoute", "app.hello", "app.utils"],
+		["ngRoute", "app.quiz", "app.utils"],
 		($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider)=> {
 			$routeProvider
 				.when("/sample", {
