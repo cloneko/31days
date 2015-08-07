@@ -8,10 +8,15 @@ namespace app.quiz {
 		questionSet: any[];
 	}
 
+	export interface TestScope extends ng.IScope {
+		name: string;
+		temp: string;
+	}
+
 	export class QuizController {
-
-		constructor(public $scope: QuizScope, public quizService: QuizService) {
-
+		constructor(public $scope: TestScope, public quizService: QuizService) {
+			$scope.name = "サーバと通信中";
+			$scope.temp = "仮";
 		}
 
 		update() {
@@ -19,5 +24,5 @@ namespace app.quiz {
 		}
 	}
 
-	angular.module("app.hello").controller("QuizController", QuizController);
+	angular.module("app.quiz").controller("QuizController", QuizController);
 }

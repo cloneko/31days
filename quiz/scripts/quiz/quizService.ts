@@ -7,7 +7,7 @@ namespace app.quiz {
 		}
 
 		test(): ng.IHttpPromise<any> {
-			return this.$http.get("");
+			return this.$http.get("/jsons/questions.json");
 		}
 	}
 

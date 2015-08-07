@@ -2,5 +2,5 @@
 namespace app.quiz {
 	"use strict";
 
-	angular.module("app.hello", [], ()=> false);
+	angular.module("app.quiz", [], ()=> false);
 }
