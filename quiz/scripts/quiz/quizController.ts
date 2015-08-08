@@ -13,16 +13,18 @@ namespace app.quiz {
 		temp: string;
 	}
 
+
 	export class QuizController {
 		constructor(public $scope: TestScope, public quizService: QuizService) {
+		//constructor(public $scope: TestScope) {
 			$scope.name = "サーバと通信中";
 			$scope.temp = "仮";
 		}
 
 		update() {
-			this.quizService.test();
+			//quizService.test();
 		}
 	}
 
-	angular.module("app.quiz").controller("QuizController", QuizController);
+	angular.module("app.quiz").controller("QuizController");
 }
