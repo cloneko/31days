@@ -28,6 +28,9 @@
 	<div ng-controller="QuizController">
 		<input type="text" ng-model="name">
 		{{name}}
+		<ul>
+			<li ng-repeat="q in questionSet">{{q.name}}</li>
+		</ul>
 	</div>
 </script>
 
