@@ -6,10 +6,14 @@ namespace app.quiz {
 		constructor(public $http: ng.IHttpService) {
 		}
 
-		test(): ng.IHttpPromise<any> {
+		getQuestions(): ng.IHttpPromise<any> {
 			return this.$http.get("/jsons/questions.json");
 		}
+
+
 	}
 
 	angular.module("app.quiz").service("QuizService", QuizService);
+
+
 }

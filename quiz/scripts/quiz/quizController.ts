@@ -7,32 +7,21 @@ namespace app.quiz {
 	export interface QuizScope extends ng.IScope {
 		name: string;
 		temp: string;
-		questionSet: any[];
+		questionSet: QuestionSet[];
 	}
-
-	export interface TestScope extends ng.IScope {
+	export interface QuestionSet extends ng.IScope {
 		name: string;
-		temp: string;
-		list: Array<any>;
+		path: string;
 	}
-
-
 	export class QuizController {
+
 		constructor(public $scope: QuizScope, public quizService: QuizService) {
-		//constructor(public $scope: TestScope) {
 			$scope.name = "";
-			$scope.temp = "";
 			$scope.questionSet = [];
 		}
-
-		update() {
-			//quizService.test();
-		}
 	}
 
-	angular.module("app.quiz").controller("QuizController",["$scope",function ($scope: QuizScope){
-		$scope.name = "サーバと通信中";
-		$scope.temp = "仮";
-		$scope.questionSet = [{"name": "SampleTest1"},{"name": "SampleTest2"}];
+	angular.module("app.quiz").controller("QuizController",["$scope","QuizService",($scope: QuizScope,service: QuizService) => {
+		service.getQuestions().then(data => {$scope.questionSet = data.data;});
 	}]);
 }

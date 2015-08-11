@@ -19,15 +19,14 @@
 	<!-- endbower -->
 	<script type="text/javascript" src="/scripts/index.js" charset="utf-8"></script>
 </head>
-<body>
+<body ng-controller="QuizController">
 
 <div ng-view>
 </div>
 
 <script type="text/ng-template" id="/template/sample.html">
-	<div ng-controller="QuizController">
-		<input type="text" ng-model="name">
-		{{name}}
+	<div>
+		<p>{{name}}さんが受験可能な試験はこちらです.</p>
 		<ul>
 			<li ng-repeat="q in questionSet">{{q.name}}</li>
 		</ul>
@@ -36,8 +35,9 @@
 
 <script type="text/ng-template" id="/template/main.html">
 	<p>
-		メインです。<br>
-		<a ng-href="/sample">サンプル</a>
+		<label name="name">お名前</label>
+		<input type="text" ng-model="name" name="name">
+		<a ng-href="/sample">{{name}}さんで試験を始める</a>
 	</p>
 </script>
 
