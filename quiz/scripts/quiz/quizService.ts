@@ -4,12 +4,12 @@ namespace app.quiz {
 	export class QuizService {
 
 		constructor(public $http: ng.IHttpService) {
+
 		}
 
 		getQuestions(): ng.IHttpPromise<any> {
 			return this.$http.get("/jsons/questions.json");
 		}
-
 
 	}
 

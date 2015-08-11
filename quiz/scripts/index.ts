@@ -10,11 +10,11 @@ namespace app {
 		["ngRoute", "app.quiz", "app.utils"],
 		($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider)=> {
 			$routeProvider
-				.when("/sample", {
-					templateUrl: "/template/sample.html"
+				.when("/questions", {
+					templateUrl: "scripts/quiz/view/questions.html"
 				})
 				.otherwise({
-					templateUrl: "/template/main.html"
+					templateUrl: "scripts/quiz/view/login.html"
 				});
 			$locationProvider.html5Mode(true);
 		}
