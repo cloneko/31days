@@ -11,6 +11,10 @@ namespace app.quiz {
 			return this.$http.get("/jsons/questions.json");
 		}
 
+		getQuestion(path: string): ng.IHttpPromise<any> {
+			return this.$http.get("/jsons/" + path + ".json");
+		}
+
 	}
 
 	angular.module("app.quiz").service("QuizService", QuizService);

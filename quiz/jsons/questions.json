@@ -1,4 +1,4 @@
 [
-	{"name": "sampleset","path":"sample.json","hoge": "huga"},
-	{"name": "simpletest","path":"simple.json","hoge": "hoge"}
+	{"name": "sampleset","path":"sample","hoge": "huga"},
+	{"name": "simpletest","path":"simple","hoge": "hoge"}
 ]
