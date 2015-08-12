@@ -103,3 +103,12 @@ unkなミスしかしてなかったorz
 サービスも動かせた!サービス自身の戻り値はPromiseであって、直接の値は返ってこない([]になる)わけね。
 
 次は画面の遷移とかやる。(12:00)
+
+なんかday11ブランチ作るの忘れてた?orz
+
+## Aug 12
+
+サービスその2(問題セット取ってくる)作った。画面に全部表示した。けど、これもうちょっとやらんないといけないことあるよね?
+
+$routeParamsの型、anyじゃないと文句言われるんだけどー。に対する回答がもう感動した。
+( [javascript - Angularjs + Typescript, How to use $routeParams with IRouteParamsService - Stack Overflow ](http://stackoverflow.com/questions/24315893/angularjs-typescript-how-to-use-routeparams-with-irouteparamsservice) )

@@ -11,6 +11,9 @@ namespace app {
 		($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider)=> {
 			$routeProvider
 				.when("/questions", {
+					templateUrl: "scripts/quiz/view/questionset.html"
+				})
+				.when("/question/:path", {
 					templateUrl: "scripts/quiz/view/questions.html"
 				})
 				.otherwise({
