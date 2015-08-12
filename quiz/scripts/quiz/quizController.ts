@@ -24,6 +24,10 @@ namespace app.quiz {
 		questions: Question[];
 	}
 
+	export interface QuestionParams extends ng.route.IRouteParamsService {
+		path: string;
+	}
+
 	export class QuizController {
 		constructor(public $scope: QuizScope, public quizService: QuizService) {
 			$scope.name = "";
@@ -34,7 +38,6 @@ namespace app.quiz {
 	export class QuestionsController {
 		constructor(public $scope: Questions, public quizService: QuizService) {
 
-
 		}
 	}
 
@@ -43,7 +46,7 @@ namespace app.quiz {
 	}]);
 
 	angular.module("app.quiz").controller("QuestionsController",
-		["$scope","$routeParams","QuizService",($scope: Questions,$routeParams: any,service: QuizService) => {
+		["$scope","$routeParams","QuizService",($scope: Questions,$routeParams: QuestionParams,service: QuizService) => {
 			service.getQuestion($routeParams.path).then(data => {
 				$scope.name = data.data.name;
 				$scope.questions = data.data.questions;

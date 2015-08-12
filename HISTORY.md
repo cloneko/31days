@@ -109,3 +109,6 @@ unkなミスしかしてなかったorz
 ## Aug 12
 
 サービスその2(問題セット取ってくる)作った。画面に全部表示した。けど、これもうちょっとやらんないといけないことあるよね?
+
+$routeParamsの型、anyじゃないと文句言われるんだけどー。に対する回答がもう感動した。
+( [javascript - Angularjs + Typescript, How to use $routeParams with IRouteParamsService - Stack Overflow ](http://stackoverflow.com/questions/24315893/angularjs-typescript-how-to-use-routeparams-with-irouteparamsservice) )
