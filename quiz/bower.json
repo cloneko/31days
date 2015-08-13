@@ -5,8 +5,8 @@
 		"es5-shim": "4.1.10",
 		"jquery": "2.1.4",
 		"angular": "1.4.3",
-		"angular-cookie": "4.0.9",
-		"angular-route": "1.4.3"
+		"angular-route": "1.4.3",
+		"angular-material": "*"
 	},
 	"devDependencies": {
 		"mocha": "2.2.5",

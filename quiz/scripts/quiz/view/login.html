@@ -1,3 +1,5 @@
-<label name="name">お名前</label>
-<input type="text" ng-model="name" name="name" ng-required="required">
-<a ng-href="/questions">{{name}}さんで試験を始める</a>
+<div layout="row" layout-align="center center">
+		<label name="name">お名前</label>
+		<input type="text" ng-model="name" name="name" ng-required="required">
+		<md-button ng-click="jump('/questions')" class="md-primary">{{name}}さんで試験を始める</md-button>
+</div>
