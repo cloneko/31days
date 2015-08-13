@@ -1,6 +1,10 @@
 <div ng-controller="QuestionsController">
-<p>{{name}}の問題</p>
+<h2>{{name}}の問題</h2>
 <ul>
-	<li ng-repeat="q in questions">{{q.q}}</li>
+	<div ng-repeat="q in questions">
+		<h3>{{q.q}}</h3>
+		<div quiz>
+		</div>
+	</div>
 </ul>
 </div>

@@ -29,7 +29,7 @@ namespace app.quiz {
 	}
 
 	export class QuizController {
-		constructor(public $scope: QuizScope, public quizService: QuizService) {
+		constructor(public $scope: QuizScope,public $location: ng.ILocationProvider, public quizService: QuizService) {
 			$scope.name = "";
 			$scope.questionSet = [];
 		}
@@ -39,9 +39,10 @@ namespace app.quiz {
 		constructor(public $scope: Questions, public quizService: QuizService) {
 
 		}
+
 	}
 
-	angular.module("app.quiz").controller("QuizController",["$scope","QuizService",($scope: QuizScope,service: QuizService) => {
+	angular.module("app.quiz").controller("QuizController",["$scope","QuizService","$location",($scope: QuizScope,$location: ng.ILocationProvider,service: QuizService) => {
 		service.getQuestions().then(data => {$scope.questionSet = data.data;});
 	}]);
 

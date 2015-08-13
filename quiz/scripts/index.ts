@@ -7,8 +7,8 @@ namespace app {
 
 	angular.module(
 		"app",
-		["ngRoute", "app.quiz", "app.utils"],
-		($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider)=> {
+		["ngRoute", "app.quiz", "app.utils", "ngMaterial"],
+		($routeProvider:ng.route.IRouteProvider, $locationProvider:ng.ILocationProvider, $mdThemingProvider: any)=> {
 			$routeProvider
 				.when("/questions", {
 					templateUrl: "scripts/quiz/view/questionset.html"
@@ -22,10 +22,10 @@ namespace app {
 			$locationProvider.html5Mode(true);
 		}
 	)
-		.run(($rootScope: ng.IRootScopeService, $routeParams: ng.route.IRouteParamsService)=> {
-			false;
-		})
-	;
+	.run(($rootScope:ng.IRootScopeService, $routeParams:ng.route.IRouteParamsService)=> {false;})
+	.config(function($mdThemingProvider: any) {
+		$mdThemingProvider.theme('default').primaryPalette('pink').accentPalette('orange');
+	});
 
 	// モジュールの定義。filterに関するモジュール。
 	angular.module(
