@@ -14,7 +14,7 @@ August 2015 Mission
   * AngularJS挫折しかけてたので再挑戦
   * CoffeeScript好きなんだけど、ここはあえてTypeScriptで挑戦してみたいと思いまして。
 * Gruntとyeomanちゃんと使いこなす。
-* Bootstrap初体験()
+* Bootstrap初体験() -> Angular Materialに変更。
 
 ## ToDo
 
