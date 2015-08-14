@@ -42,7 +42,7 @@ namespace app.quiz {
 
 	}
 
-	angular.module("app.quiz").controller("QuizController",["$scope","QuizService","$location",($scope: QuizScope,$location: ng.ILocationProvider,service: QuizService) => {
+	angular.module("app.quiz").controller("QuizController",["$scope","QuizService",($scope: QuizScope,service: QuizService) => {
 		service.getQuestions().then(data => {$scope.questionSet = data.data;});
 	}]);
 
@@ -52,6 +52,7 @@ namespace app.quiz {
 				$scope.name = data.data.name;
 				$scope.questions = data.data.questions;
 			});
+			console.log($scope);
 		}]
 	);
 }

@@ -7,13 +7,14 @@ namespace app.quiz {
 	export class QuizDirective implements ng.IDirective {
 
 		restrict: string = "E";
-		templateUrl: string = "scripts/quiz/view/answer/hoge.html";
+		template: string = "hogehoge";
+		transclude: any = false;
+		replace: boolean = false;
 		scope: any = false;
-		link(scope: ng.IScope, elem: any, attrs: ng.IAttributes, ctrl: any) {
-			console.log(scope);
+		link(scope: Question, elem: any, attrs: ng.IAttributes, ctrl: any) {
+			console.log(scope.q);
 		}
-
 	}
-	angular.module("app.quiz").directive("quiz", () => new app.quiz.QuizDirective());
+	angular.module("app.quiz").directive("quizAnswer", () => new app.quiz.QuizDirective());
 
 }
