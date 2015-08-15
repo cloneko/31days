@@ -122,3 +122,10 @@ $routeParamsの型、anyじゃないと文句言われるんだけどー。に�
 ## Aug 14
 
 選択肢表示用のディレクティブ作った。<div ディレクティブ名>じゃ動かなかった。<ディレクティブ名>で動いた。
+
+## Aug 15
+
+[牛タンまつりしてたら](https://twitter.com/cloneko/status/632518045685014528)すっかり忘れてたorz
+
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="ja" dir="ltr">牛タンのみ。 <a href="http://t.co/3bVB7LW6ev">pic.twitter.com/3bVB7LW6ev</a></p>&mdash; Yonashiro Yuu (@cloneko) <a href="https://twitter.com/cloneko/status/632518045685014528">August 15, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
