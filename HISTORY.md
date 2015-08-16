@@ -129,3 +129,7 @@ $routeParamsの型、anyじゃないと文句言われるんだけどー。に�
 
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="ja" dir="ltr">牛タンのみ。 <a href="http://t.co/3bVB7LW6ev">pic.twitter.com/3bVB7LW6ev</a></p>&mdash; Yonashiro Yuu (@cloneko) <a href="https://twitter.com/cloneko/status/632518045685014528">August 15, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## Aug 16
+
+今週中盤までお休みします…
