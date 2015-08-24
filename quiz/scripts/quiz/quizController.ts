@@ -15,7 +15,7 @@ namespace app.quiz {
 	}
 
 	export interface Question {
-		q: string;
+		q: any; // FIXME
 		a: string[];
 		answers: number;
 	}
@@ -52,7 +52,6 @@ namespace app.quiz {
 				$scope.name = data.data.name;
 				$scope.questions = data.data.questions;
 			});
-			console.log($scope);
 		}]
 	);
 }
